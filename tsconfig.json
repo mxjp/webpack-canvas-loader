@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"downlevelIteration": true,
+		"sourceMap": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"target": "es6",
+		"outDir": "dist",
+		"rootDir": "src"
+	},
+	"include": [
+		"./src/**/*.ts"
+	]
+}

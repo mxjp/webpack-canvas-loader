@@ -1,0 +1,33 @@
+{
+	"name": "webpack-canvas-loader",
+	"version": "1.0.0",
+	"description": "Process image files using the canvas api and import asset urls.",
+	"scripts": {
+		"build": "tsc",
+		"test": "rimraf dist/test && tsc -p tsconfig-test.json && ava -v",
+		"start": "rimraf dist/test && tsc -p tsconfig-test.json && concurrently \"tsc -p tsconfig-test.json -w\" \"ava -w -v\"",
+		"prepack": "npm run build"
+	},
+	"dependencies": {
+		"canvas": "^2.5.0",
+		"loader-utils": "^1.2.3"
+	},
+	"devDependencies": {
+		"ava": "^2.2.0",
+		"concurrently": "^4.1.1",
+		"typescript": "^3.5.3",
+		"webpack": "^4.39.1"
+	},
+	"ava": {
+		"files": [
+			"./dist/test/test/**/*.js"
+		]
+	},
+	"peerDependencies": {
+		"webpack": "^4.0.0"
+	},
+	"main": "dist/index.js",
+	"repository": "github:mxjp/webpack-canvas-loader",
+	"author": "Max J. Polster",
+	"license": "MIT"
+}
