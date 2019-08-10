@@ -15,24 +15,24 @@ const { createCanvas } = require("canvas");
 
 // Webpack configuration:
 rules: [
-	{
-		test: /\.(jpg|png)$/,
-		loader: "webpack-canvas-loader",
-		options: {
-			render({ image, emitJPEG, emitPNG }) {
-				// 'this' is the webpack loader context.
+    {
+        test: /\.(jpg|png)$/,
+        loader: "webpack-canvas-loader",
+        options: {
+            render({ image, emitJPEG, emitPNG }) {
+                // 'this' is the webpack loader context.
 
-				const width = 300;
-				const height = width / image.naturalWidth * image.naturalHeight;
+                const width = 300;
+                const height = width / image.naturalWidth * image.naturalHeight;
 
-				const canvas = createCanvas(width, height);
-				const ctx = canvas.getContext("2d");
-				ctx.drawImage(image, 0, 0, width, height);
+                const canvas = createCanvas(width, height);
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(image, 0, 0, width, height);
 
-				return emitJPEG(canvas, { quality: 0.9 });
-			}
-		}
-	}
+                return emitJPEG(canvas, { quality: 0.9 });
+            }
+        }
+    }
 ]
 ```
 ```js
@@ -45,9 +45,9 @@ document.appendChild(img);
 ```
 + name `<string>` - The output asset name. Default is `"canvas.[contenthash].jpg|png"` depending on the emit function that is used.
 + render `<(context) => Promise<string>>` - A function to render the image. The context object has the following properties:
-	+ image `<Image>` - The source image object.
-	+ emitJPEG `<(canvas: Canvas, config: JpegConfig) => Promise<string>>` or
-	+ emitPNG `<(canvas: Canvas, config: PngConfig) => Promise<string>>` - Emit a jpeg or png file. Returns a javascript expression that evaluates to the public path of the asset when bundled in webpack.
+    + image `<Image>` - The source image object.
+    + emitJPEG `<(canvas: Canvas, config: JpegConfig) => Promise<string>>` or
+    + emitPNG `<(canvas: Canvas, config: PngConfig) => Promise<string>>` - Emit a jpeg or png file. Returns a javascript expression that evaluates to the public path of the asset when bundled in webpack.
 
 ### Further reading
 + Canvas specific api and supported formats are documented [here](https://www.npmjs.com/package/canvas)
