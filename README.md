@@ -1,10 +1,7 @@
 # Webpack Canvas Loader
-
-[![npm](https://img.shields.io/npm/v/webpack-canvas-loader) ![npm](https://img.shields.io/npm/l/webpack-canvas-loader)](https://www.npmjs.com/package/webpack-canvas-loader)
-[![Travis (.com)](https://img.shields.io/travis/com/mxjp/webpack-canvas-loader)](https://travis-ci.com/mxjp/webpack-canvas-loader)
-
 Process files using the canvas api to cut, resize or apply filters on images.
 
+## Installation
 ```shell
 npm i -D webpack-canvas-loader
 ```

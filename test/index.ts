@@ -1,4 +1,5 @@
 import test from "ava";
+import path from "path";
 import webpack = require("webpack");
 import MemoryFS = require("memory-fs");
 import { createCanvas } from "canvas";
@@ -7,6 +8,7 @@ const loader = require.resolve("../src");
 
 test("general usage", async t => {
 	const compiler = webpack({
+		context: path.join(__dirname, "../.."),
 		mode: "development",
 		entry: "./test/entry.js",
 		output: { path: "/", filename: "index.js" },

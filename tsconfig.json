@@ -1,15 +1,19 @@
 {
 	"compilerOptions": {
 		"declaration": true,
-		"downlevelIteration": true,
 		"sourceMap": true,
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"target": "es6",
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"target": "ES2020",
 		"outDir": "dist",
-		"rootDir": "src"
+		"rootDir": "src",
+		"skipLibCheck": true,
+		"esModuleInterop": true
 	},
 	"include": [
-		"./src/**/*.ts"
+		"src"
+	],
+	"exclude": [
+		"node_modules"
 	]
 }

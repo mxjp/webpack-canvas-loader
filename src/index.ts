@@ -22,7 +22,7 @@ function renderToPNG(canvas: Canvas, config?: PngConfig) {
 }
 
 function loader(source: Buffer) {
-	const options = getOptions(this);
+	const options: any = getOptions(this);
 	const cb = this.async();
 	(async () => {
 		const image = await loadImage(source);
